@@ -1,5 +1,6 @@
 package lk.ijse.theculinaryacademyhibernateproject.dao;
 
+import lk.ijse.theculinaryacademyhibernateproject.dao.Custom.Impl.ProgramDAOImpl;
 import lk.ijse.theculinaryacademyhibernateproject.dao.Custom.Impl.StudentDAOImpl;
 import lk.ijse.theculinaryacademyhibernateproject.dao.Custom.Impl.UserDAOImpl;
 
@@ -16,7 +17,7 @@ public class DAOFactory {
     }
 
     public enum DAOTypes{
-        USER,STUDENT
+        USER,STUDENT,PROGRAM
     }
 
     public SuperDAO getDAO(DAOTypes type) {
@@ -24,6 +25,7 @@ public class DAOFactory {
         switch (type) {
             case USER:return new UserDAOImpl();
             case STUDENT:return new StudentDAOImpl();
+            case PROGRAM:return new ProgramDAOImpl();
             default:return null;
         }
 

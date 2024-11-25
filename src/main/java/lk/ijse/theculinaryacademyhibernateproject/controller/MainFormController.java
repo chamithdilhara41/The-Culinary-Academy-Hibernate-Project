@@ -104,8 +104,12 @@ public class MainFormController {
     }
 
     @FXML
-    void btnOnActionProgram(ActionEvent event) {
+    void btnOnActionProgram(ActionEvent event) throws IOException {
+        AnchorPane dashboardPane = FXMLLoader.load(getClass().getResource("/lk/ijse/theculinaryacademyhibernateproject/view/ProgramForm.fxml"));
 
+        mainPane.getChildren().clear();
+        mainPane.getChildren().add(dashboardPane);
+        AnimationUtil.popUpAnimation(mainPane,dashboardPane);
     }
 
     @FXML

@@ -104,6 +104,11 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
+    public boolean delete(User dto) {
+        return false;
+    }
+
+    @Override
     public List<User> getAll() {
         return List.of();//user table ek hadanna one
     }

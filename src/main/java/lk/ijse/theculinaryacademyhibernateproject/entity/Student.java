@@ -9,10 +9,8 @@ import java.time.LocalDate;
 
 @Entity
 public class Student {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
 
+    @Id
     private String studentId;
     private String firstName;
     private String lastName;
@@ -94,8 +92,7 @@ public class Student {
     @Override
     public String toString() {
         return "Student{" +
-                "id=" + id +
-                ", studentId='" + studentId + '\'' +
+                "studentId='" + studentId + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", address='" + address + '\'' +

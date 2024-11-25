@@ -47,4 +47,9 @@ public class StudentBOImpl implements StudentBO {
     public String generateStudentId() {
         return studentDAO.generateNextStudentId();
     }
+
+    @Override
+    public boolean deleteStudent(String studentId) {
+        return studentDAO.delete(studentId);
+    }
 }

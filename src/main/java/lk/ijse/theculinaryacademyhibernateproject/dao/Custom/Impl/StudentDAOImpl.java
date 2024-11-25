@@ -1,5 +1,6 @@
 package lk.ijse.theculinaryacademyhibernateproject.dao.Custom.Impl;
 
+import javafx.scene.control.Alert;
 import lk.ijse.theculinaryacademyhibernateproject.config.FactoryConfiguration;
 import lk.ijse.theculinaryacademyhibernateproject.dao.Custom.StudentDAO;
 import lk.ijse.theculinaryacademyhibernateproject.entity.Student;
@@ -75,6 +76,12 @@ public class StudentDAOImpl implements StudentDAO {
             }
         }
     }
+
+    @Override
+    public boolean delete(Student dto) {
+        return false;
+    }
+
     @Override
     public String generateNextStudentId() {
         Session session = null;
@@ -111,6 +118,34 @@ public class StudentDAOImpl implements StudentDAO {
             }
         }
     }
+
+    @Override
+    public boolean delete(String studentId) {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        try {
+            Student student = session.get(Student.class, studentId);
+
+            if (student != null) {
+                //CascadeType.REMOVE,then can delete student
+                session.remove(student);
+                transaction.commit();
+                return true;
+            } else {
+                return false; // Entity not found
+            }
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+            return false;
+        } finally {
+            session.close();
+        }
+    }
+
 
     @Override
     public List<Student> getAll() {

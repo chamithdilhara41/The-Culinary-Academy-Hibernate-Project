@@ -85,7 +85,22 @@ public class StudentFormController {
 
     @FXML
     void btnOnActionDelete(ActionEvent event) {
+        String studentId = txtStudentId.getText();
 
+        boolean isDeleted = studentBO.deleteStudent(studentId);
+
+        if (isDeleted){
+            clearFields();
+            getAllStudents();
+            setCellValueFactory();
+            generateId();
+            new Alert(Alert.AlertType.INFORMATION, "Student deleted successfully").show();
+        }else {
+            getAllStudents();
+            setCellValueFactory();
+            generateId();
+            new Alert(Alert.AlertType.ERROR,"Could not find student with id " + studentId).showAndWait();
+        }
     }
 
     @FXML
