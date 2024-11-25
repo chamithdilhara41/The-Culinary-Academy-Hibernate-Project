@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootNode" prefHeight="657.0" prefWidth="1150.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.theculinaryacademyhibernateproject.controller.MainFormController">
+    <children>
+      <ImageView fitHeight="190.0" fitWidth="203.0" layoutY="63.0">
+         <image>
+            <Image url="@../images/buttonsLogo.jpg" />
+         </image>
+      </ImageView>
+        <JFXButton fx:id="btnDashboard" alignment="BASELINE_LEFT" buttonType="RAISED" layoutY="241.0" onAction="#btnOnActionDashboard" prefHeight="52.0" prefWidth="203.0" ripplerFill="#afb7ae" style="-fx-background-color: A0A69C;" text=" Dashboard">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+            <font>
+                <Font name="Candara Italic" size="25.0" />
+            </font>
+            <graphic>
+                <ImageView fitHeight="28.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/icons8-dashboard-50.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+            <effect>
+                <DropShadow />
+            </effect>
+        </JFXButton>
+        <JFXButton fx:id="btnStudent" alignment="BASELINE_LEFT" buttonType="RAISED" layoutY="293.0" onAction="#btnOnActionStudent" prefHeight="52.0" prefWidth="203.0" ripplerFill="#0c8c08" style="-fx-background-color: A0A69C;" text=" Student">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+            <font>
+                <Font name="Candara Italic" size="25.0" />
+            </font>
+            <graphic>
+                <ImageView fitHeight="28.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/icons8-buyer-50%20(1).png" />
+                    </image>
+                </ImageView>
+            </graphic>
+            <effect>
+                <DropShadow />
+            </effect>
+        </JFXButton>
+        <JFXButton fx:id="btnProgram" alignment="BASELINE_LEFT" buttonType="RAISED" layoutY="345.0" onAction="#btnOnActionProgram" prefHeight="52.0" prefWidth="203.0" ripplerFill="#0c8c08" style="-fx-background-color: A0A69C;" text=" Program">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+            <font>
+                <Font name="Candara Italic" size="25.0" />
+            </font>
+            <graphic>
+                <ImageView fitHeight="26.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/icons8-buyer-50.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+            <effect>
+                <DropShadow />
+            </effect>
+        </JFXButton>
+      <JFXButton fx:id="btnPayment" alignment="BASELINE_LEFT" buttonType="RAISED" layoutY="397.0" onAction="#btnOnActionPayment" prefHeight="52.0" prefWidth="203.0" ripplerFill="#0c8c08" style="-fx-background-color: A0A69C;" text=" Payment">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="Candara Italic" size="25.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="28.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8-buyer-50%20(1).png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <effect>
+            <DropShadow />
+         </effect>
+      </JFXButton>
+      <JFXButton fx:id="btnSettings" alignment="BASELINE_LEFT" buttonType="RAISED" layoutY="449.0" onAction="#btnOnActionSettings" prefHeight="52.0" prefWidth="203.0" ripplerFill="#0c8c08" style="-fx-background-color: A0A69C;" text=" Settings">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="Candara Italic" size="25.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="28.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8-buyer-50%20(1).png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <effect>
+            <DropShadow />
+         </effect>
+      </JFXButton>
+      <JFXButton fx:id="btnUser" alignment="BASELINE_LEFT" buttonType="RAISED" layoutY="501.0" onAction="#btnOnActionUser" prefHeight="52.0" prefWidth="203.0" ripplerFill="#0c8c08" style="-fx-background-color: A0A69C;" text=" User">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="Candara Italic" size="25.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="28.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8-buyer-50%20(1).png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <effect>
+            <DropShadow />
+         </effect>
+      </JFXButton>
+      <ImageView fitHeight="362.0" fitWidth="398.0" layoutX="466.0" layoutY="138.0" opacity="0.37">
+         <image>
+            <Image url="@../images/DALL_E_2024-11-05_16.29.40_-_A_logo_for__The_Culinary_Academy___featuring_a_modern_and_elegant_design_w-.png" />
+         </image>
+      </ImageView>
+        <AnchorPane prefHeight="78.0" prefWidth="1150.0" style="-fx-background-color: D5C0A4;">
+            <children>
+                <Label layoutX="948.0" layoutY="12.0" text="Date : ">
+                    <font>
+                        <Font name="System Bold Italic" size="19.0" />
+                    </font>
+                </Label>
+                <Label fx:id="lblDate" layoutX="1006.0" layoutY="12.0" textFill="#c40404">
+                    <font>
+                        <Font name="System Bold" size="19.0" />
+                    </font>
+                </Label>
+                <Label layoutX="373.0" layoutY="14.0" prefHeight="50.0" prefWidth="390.0" text="The Culinary Academy" textFill="#efe445">
+                    <font>
+                        <Font name="Comic Sans MS Bold Italic" size="35.0" />
+                    </font>
+                    <effect>
+                        <DropShadow height="53.76" radius="19.945" width="28.02" />
+                    </effect>
+                </Label>
+                <Label layoutX="948.0" layoutY="41.0" text="Time :">
+                    <font>
+                        <Font name="System Bold Italic" size="19.0" />
+                    </font>
+                </Label>
+                <Label fx:id="lblTime" layoutX="1006.0" layoutY="41.0" textFill="#232fdf">
+                    <font>
+                        <Font name="System Bold" size="19.0" />
+                    </font>
+                </Label>
+                <ImageView fitHeight="62.0" fitWidth="55.0" layoutX="513.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" />
+                <ImageView fitHeight="62.0" fitWidth="58.0" layoutX="16.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/icons8-male-user-94.png" />
+                    </image>
+                </ImageView>
+                <Label layoutX="81.0" layoutY="17.0" prefHeight="50.0" prefWidth="74.0" text="Hello!">
+                    <font>
+                        <Font name="System Bold Italic" size="24.0" />
+                    </font>
+                </Label>
+                <Label fx:id="lblName" layoutX="155.0" layoutY="17.0" prefHeight="50.0" prefWidth="136.0" text="">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Label>
+            </children></AnchorPane>
+        <AnchorPane layoutY="554.0" prefHeight="104.0" prefWidth="1150.0" style="-fx-background-color: D5C0A4;">
+            <children>
+                <JFXButton fx:id="btnLogout" buttonType="RAISED" layoutX="22.0" layoutY="31.0" onAction="#btnOnActionLogout" prefHeight="36.0" prefWidth="155.0" style="-fx-background-color: #ff6464;" text="LOG OUT..">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </JFXButton>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="mainPane" layoutX="203.0" layoutY="78.0" prefHeight="562.0" prefWidth="946.0" />
+    </children>
+</AnchorPane>

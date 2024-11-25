@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="572.0" prefWidth="945.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.theculinaryacademyhibernateproject.controller.DashboardFormController">
+   <children>
+      <Label layoutX="29.0" layoutY="17.0" text="Dashboard">
+         <font>
+            <Font name="Candara Italic" size="24.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="29.0" layoutY="73.0" prefHeight="126.0" prefWidth="213.0" style="-fx-background-color: #89a6ff; -fx-background-radius: 10 10 10 10;">
+         <children>
+            <Label layoutX="10.0" layoutY="6.0" prefHeight="30.0" prefWidth="196.0" text="How many Suppliers">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="31.0" prefHeight="30.0" prefWidth="166.0" text="were there?">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblSupplierCount" layoutX="93.0" layoutY="64.0" prefHeight="46.0" prefWidth="39.0">
+               <font>
+                  <Font name="System Bold Italic" size="30.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </AnchorPane>
+      <AnchorPane layoutX="366.0" layoutY="73.0" prefHeight="126.0" prefWidth="213.0" style="-fx-background-color: #89a6ff; -fx-background-radius: 10 10 10 10;">
+         <children>
+            <Label layoutX="10.0" layoutY="6.0" prefHeight="30.0" prefWidth="203.0" text="How many Employees">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="9.0" layoutY="31.0" prefHeight="30.0" prefWidth="166.0" text="work there?">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblEmployeeCount" layoutX="95.0" layoutY="74.0" prefHeight="46.0" prefWidth="10.0">
+               <font>
+                  <Font name="System Bold Italic" size="30.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </AnchorPane>
+      <AnchorPane layoutX="701.0" layoutY="73.0" prefHeight="126.0" prefWidth="213.0" style="-fx-background-color: #89a6ff; -fx-background-radius: 10 10 10 10;">
+         <children>
+            <Label layoutX="10.0" layoutY="6.0" prefHeight="30.0" prefWidth="203.0" text="How many Buyers">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="9.0" layoutY="31.0" prefHeight="30.0" prefWidth="166.0" text="in there?">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblBuyerCount" layoutX="95.0" layoutY="74.0" prefHeight="46.0" prefWidth="10.0">
+               <font>
+                  <Font name="System Bold Italic" size="30.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </AnchorPane>
+      <Line endX="15.4000244140625" endY="177.1999969482422" layoutX="291.0" layoutY="55.0" startX="15.4000244140625" startY="5.199993133544922">
+         <stroke>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </stroke>
+      </Line>
+      <Line endX="15.4000244140625" endY="177.1999969482422" layoutX="628.0" layoutY="48.0" startX="15.4000244140625" startY="6.799999237060547">
+         <stroke>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </stroke>
+      </Line>
+   </children>
+</AnchorPane>
