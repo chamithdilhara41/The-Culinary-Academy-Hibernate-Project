@@ -1,8 +1,6 @@
 package lk.ijse.theculinaryacademyhibernateproject.config;
 
-import lk.ijse.theculinaryacademyhibernateproject.entity.Program;
-import lk.ijse.theculinaryacademyhibernateproject.entity.Student;
-import lk.ijse.theculinaryacademyhibernateproject.entity.User;
+import lk.ijse.theculinaryacademyhibernateproject.entity.*;
 import lk.ijse.theculinaryacademyhibernateproject.tdm.StudentTm;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -31,7 +29,9 @@ public class FactoryConfiguration {
         configuration
                 .addAnnotatedClass(User.class)
                 .addAnnotatedClass(Student.class)
-                .addAnnotatedClass(Program.class);
+                .addAnnotatedClass(Program.class)
+                .addAnnotatedClass(Registration.class)
+                .addAnnotatedClass(Payment.class);
 
         sessionFactory = configuration.buildSessionFactory();
     }

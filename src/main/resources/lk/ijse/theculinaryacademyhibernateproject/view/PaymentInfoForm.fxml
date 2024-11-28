@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="353.0" prefWidth="947.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.theculinaryacademyhibernateproject.controller.PaymentInfoController">
+    <children>
+        <Label layoutX="54.0" layoutY="23.0" text="Payment Info">
+            <font>
+                <Font size="56.0" />
+            </font>
+        </Label>
+        <Label layoutX="466.0" layoutY="63.0" prefHeight="26.0" prefWidth="108.0" text="Register ID :-">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblRegisterId" layoutX="575.0" layoutY="64.0" prefHeight="26.0" prefWidth="178.0" text=" -" textFill="#ff000d">
+            <font>
+                <Font name="System Bold Italic" size="16.0" />
+            </font>
+        </Label>
+        <Label layoutX="465.0" layoutY="283.0" prefHeight="26.0" prefWidth="66.0" text="Date :-">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblDate" layoutX="525.0" layoutY="284.0" prefHeight="26.0" prefWidth="170.0">
+            <font>
+                <Font name="System Bold Italic" size="16.0" />
+            </font>
+        </Label>
+        <Label layoutX="54.0" layoutY="132.0" prefHeight="26.0" prefWidth="116.0" text="Payment ID :-">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblPaymentId" layoutX="176.0" layoutY="133.0" prefHeight="26.0" prefWidth="218.0" text=" -" textFill="#341f97">
+            <font>
+                <Font name="System Bold Italic" size="16.0" />
+            </font>
+        </Label>
+        <Label layoutX="54.0" layoutY="196.0" prefHeight="34.0" prefWidth="178.0" text="Program Fee :-">
+            <font>
+                <Font name="System Bold" size="23.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblProgramFee" layoutX="238.0" layoutY="197.0" prefHeight="34.0" prefWidth="306.0" text=" -" textFill="#27ae60">
+            <font>
+                <Font name="System Bold" size="23.0" />
+            </font>
+        </Label>
+        <Label layoutX="54.0" layoutY="281.0" prefHeight="26.0" prefWidth="150.0" text="Pay Amount (Rs.) :-">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+        </Label>
+        <TextField fx:id="txtPayAmount" layoutX="206.0" layoutY="277.0" prefHeight="34.0" prefWidth="170.0">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </TextField>
+        <Label layoutX="465.0" layoutY="120.0" prefHeight="26.0" prefWidth="129.0" text="Payment Type :-">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+        </Label>
+        <JFXComboBox fx:id="comBoxPaymentType" layoutX="597.0" layoutY="121.0" prefHeight="26.0" prefWidth="101.0" />
+        <Label layoutX="465.0" layoutY="185.0" prefHeight="26.0" prefWidth="108.0" text="Description :-">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+        </Label>
+        <TextArea fx:id="txtAreaDescription" layoutX="573.0" layoutY="184.0" prefHeight="71.0" prefWidth="306.0">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </TextArea>
+        <JFXButton buttonType="RAISED" layoutX="753.0" layoutY="284.0" onAction="#btnOnActionPayNow" prefHeight="20.0" prefWidth="150.0" ripplerFill="#009e05" style="-fx-background-color: #009e05;" text="Pay Now" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </JFXButton>
+      <Label layoutX="466.0" layoutY="14.0" prefHeight="26.0" prefWidth="116.0" text="Student ID :-">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblStudentId" layoutX="575.0" layoutY="15.0" prefHeight="26.0" prefWidth="218.0" text=" -" textFill="#341f97">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>

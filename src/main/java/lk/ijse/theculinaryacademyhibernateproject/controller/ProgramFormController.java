@@ -12,7 +12,6 @@ import javafx.scene.input.MouseEvent;
 import lk.ijse.theculinaryacademyhibernateproject.bo.BOFactory;
 import lk.ijse.theculinaryacademyhibernateproject.bo.Custom.ProgramBO;
 import lk.ijse.theculinaryacademyhibernateproject.dto.ProgramDTO;
-import lk.ijse.theculinaryacademyhibernateproject.dto.StudentDTO;
 import lk.ijse.theculinaryacademyhibernateproject.tdm.ProgramTm;
 
 import java.util.List;
@@ -93,7 +92,7 @@ public class ProgramFormController {
         }
         String id = colProgramId.getCellData(index).toString();
         String programName = colProgramName.getCellData(index).toString();
-        String duration = cmbDuration.getSelectionModel().getSelectedItem();
+        String duration = colDuration.getCellData(index).toString();
         String fee = colFee.getCellData(index).toString();
 
         txtProgramId.setText(id);
@@ -109,7 +108,22 @@ public class ProgramFormController {
 
     @FXML
     void btnOnActionDelete(ActionEvent event) {
+        String programId = txtProgramId.getText();
 
+        boolean isDeleted = programBO.deleteProgram(programId);
+
+        if (isDeleted){
+            clearFields();
+            getAllPrograms();
+            setCellValueFactory();
+            generateId();
+            new Alert(Alert.AlertType.INFORMATION, "Program deleted successfully").show();
+        }else {
+            getAllPrograms();
+            setCellValueFactory();
+            generateId();
+            new Alert(Alert.AlertType.ERROR,"Could not find program with id " + programId).showAndWait();
+        }
     }
 
     @FXML

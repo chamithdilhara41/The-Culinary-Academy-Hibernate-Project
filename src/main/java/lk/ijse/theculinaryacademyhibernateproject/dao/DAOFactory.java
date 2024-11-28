@@ -1,8 +1,6 @@
 package lk.ijse.theculinaryacademyhibernateproject.dao;
 
-import lk.ijse.theculinaryacademyhibernateproject.dao.Custom.Impl.ProgramDAOImpl;
-import lk.ijse.theculinaryacademyhibernateproject.dao.Custom.Impl.StudentDAOImpl;
-import lk.ijse.theculinaryacademyhibernateproject.dao.Custom.Impl.UserDAOImpl;
+import lk.ijse.theculinaryacademyhibernateproject.dao.Custom.Impl.*;
 
 public class DAOFactory {
     private static DAOFactory daoFactory;
@@ -17,7 +15,7 @@ public class DAOFactory {
     }
 
     public enum DAOTypes{
-        USER,STUDENT,PROGRAM
+        USER,STUDENT,PROGRAM,REGISTRATION,PAYMENT
     }
 
     public SuperDAO getDAO(DAOTypes type) {
@@ -26,6 +24,8 @@ public class DAOFactory {
             case USER:return new UserDAOImpl();
             case STUDENT:return new StudentDAOImpl();
             case PROGRAM:return new ProgramDAOImpl();
+            case REGISTRATION:return new RegistrationDAOImpl();
+            case PAYMENT:return new PaymentDAOImpl();
             default:return null;
         }
 

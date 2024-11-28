@@ -7,12 +7,13 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="572.0" prefWidth="945.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.theculinaryacademyhibernateproject.controller.StudentFormController">
+<AnchorPane fx:id="mainPane" prefHeight="572.0" prefWidth="945.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.theculinaryacademyhibernateproject.controller.StudentFormController">
     <children>
         <Label layoutX="29.0" layoutY="20.0" text="Student Details ">
             <font>
@@ -168,5 +169,20 @@
                 <Font size="36.0" />
             </font>
         </Label>
+      <JFXButton fx:id="btnRegisterStudent" buttonType="RAISED" layoutX="583.0" layoutY="417.0" onAction="#btnOnActionRegisterStudent" prefHeight="51.0" prefWidth="274.0" text="  Register Student">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+         <effect>
+            <Shadow />
+         </effect>
+         <graphic>
+            <ImageView fitHeight="32.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8-create-order.gif" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
     </children>
 </AnchorPane>

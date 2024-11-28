@@ -1,7 +1,11 @@
 package lk.ijse.theculinaryacademyhibernateproject.entity;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+
+import java.util.List;
 
 @Entity
 public class Program {
@@ -10,6 +14,9 @@ public class Program {
     private String programName;
     private String Duration;
     private double Fee;
+
+    @OneToMany(mappedBy = "program", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Registration> registrations;
 
     public Program() {
     }

@@ -1,11 +1,9 @@
 package lk.ijse.theculinaryacademyhibernateproject.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 public class Student {
@@ -18,6 +16,12 @@ public class Student {
     private String email;
     private String contact;
     private LocalDate DOB;
+
+    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Payment> payments;
+
+    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Registration> registrations;
 
     public Student(String studentId, String firstName, String lastName, String address, String email, String contact, LocalDate DOB) {
         this.studentId = studentId;

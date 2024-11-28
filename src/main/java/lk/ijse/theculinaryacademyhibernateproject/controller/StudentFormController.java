@@ -1,22 +1,30 @@
 package lk.ijse.theculinaryacademyhibernateproject.controller;
 
+import com.jfoenix.controls.JFXButton;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import lk.ijse.theculinaryacademyhibernateproject.bo.BOFactory;
 import lk.ijse.theculinaryacademyhibernateproject.bo.Custom.StudentBO;
 import lk.ijse.theculinaryacademyhibernateproject.dto.StudentDTO;
 import lk.ijse.theculinaryacademyhibernateproject.tdm.StudentTm;
+import lk.ijse.theculinaryacademyhibernateproject.util.AnimationUtil;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
 
 public class StudentFormController {
+
+    @FXML
+    private AnchorPane mainPane;
 
     @FXML
     private TableColumn<?, ?> colAddress;
@@ -41,6 +49,9 @@ public class StudentFormController {
 
     @FXML
     private Label lblBuyerForm;
+
+    @FXML
+    private JFXButton btnRegisterStudent;
 
     @FXML
     private TableView<StudentTm> tblStudent;
@@ -220,6 +231,17 @@ public class StudentFormController {
     @FXML
     void txtStudentIdOnKeyReleased(KeyEvent event) {
 
+    }
+
+    @FXML
+    void btnOnActionRegisterStudent(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/ijse/theculinaryacademyhibernateproject/view/RegisterStudentForm.fxml"));
+        AnchorPane contentPane = loader.load();
+
+        // Add the loaded content to the main pane
+        mainPane.getChildren().clear();
+        mainPane.getChildren().add(contentPane);
+        AnimationUtil.popUpAnimation(mainPane, contentPane);
     }
 
     @FXML

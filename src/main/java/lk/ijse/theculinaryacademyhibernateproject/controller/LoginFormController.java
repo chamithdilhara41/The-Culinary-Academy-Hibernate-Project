@@ -38,8 +38,9 @@ public class LoginFormController {
 
     private void checkUserTable() {
         int number = userBO.checkTableEmpty();
+        String password = BCrypt.hashpw("Admin123", BCrypt.gensalt());
         if (number == 0) {
-            UserDTO userDTO = new UserDTO("admin","Admin123","","admin");
+            UserDTO userDTO = new UserDTO("admin",password,"","admin");
             userBO.saveUser(userDTO);
         }
     }

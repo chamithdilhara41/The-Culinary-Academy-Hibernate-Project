@@ -89,4 +89,113 @@ public class ProgramDAOImpl implements ProgramDAO {
             }
         }
     }
+
+    @Override
+    public boolean delete(String programId) {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        try {
+            Program program = session.get(Program.class, programId);
+
+            if (program != null) {
+                //CascadeType.REMOVE,then can delete student
+                session.remove(program);
+                transaction.commit();
+                return true;
+            } else {
+                return false; // Entity not found
+            }
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+            return false;
+        } finally {
+            session.close();
+        }
+    }
+
+    @Override
+    public List<String> getNames() {
+        List<String> programIds = null;
+        Session session = null;
+
+        try {
+            // Open a session
+            session = FactoryConfiguration.getInstance().getSession();
+
+            // Create HQL query to fetch only program IDs
+            String hql = "SELECT p.programName FROM Program p";
+            Query<String> query = session.createQuery(hql, String.class);
+
+            // Execute query and get results
+            programIds = query.list();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            // Ensure session is closed
+            if (session != null) {
+                session.close();
+            }
+        }
+
+        return programIds;
+    }
+
+    @Override
+    public Program searchByName(String programName) {
+        Session session = null;
+        try {
+            // Open a session
+            session = FactoryConfiguration.getInstance().getSession();
+
+            // HQL to search for a program by its name
+            String hql = "FROM Program WHERE programName = :programName";
+            Query<Program> query = session.createQuery(hql, Program.class);
+            query.setParameter("programName", programName);
+
+            // Retrieve the result
+            Program program = query.uniqueResult();
+
+            return program; // Return the found Program object (or null if not found)
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null; // Return null in case of an error
+        } finally {
+            if (session != null) {
+                session.close(); // Ensure session is closed
+            }
+        }
+    }
+
+    @Override
+    public Program searchById(String programId) {
+        Session session = null;
+        try {
+            // Open a session
+            session = FactoryConfiguration.getInstance().getSession();
+
+            // HQL to search for a program by its name
+            String hql = "FROM Program WHERE programId = :programId";
+            Query<Program> query = session.createQuery(hql, Program.class);
+            query.setParameter("programId", programId);
+
+            // Retrieve the result
+            Program program = query.uniqueResult();
+
+            return program; // Return the found Program object (or null if not found)
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null; // Return null in case of an error
+        } finally {
+            if (session != null) {
+                session.close(); // Ensure session is closed
+            }
+        }
+    }
+
+
 }

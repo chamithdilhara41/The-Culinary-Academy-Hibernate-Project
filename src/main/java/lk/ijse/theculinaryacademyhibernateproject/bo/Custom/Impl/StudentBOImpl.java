@@ -1,5 +1,6 @@
 package lk.ijse.theculinaryacademyhibernateproject.bo.Custom.Impl;
 
+import javafx.collections.ObservableList;
 import lk.ijse.theculinaryacademyhibernateproject.bo.Custom.StudentBO;
 import lk.ijse.theculinaryacademyhibernateproject.dao.Custom.StudentDAO;
 import lk.ijse.theculinaryacademyhibernateproject.dao.DAOFactory;
@@ -51,5 +52,20 @@ public class StudentBOImpl implements StudentBO {
     @Override
     public boolean deleteStudent(String studentId) {
         return studentDAO.delete(studentId);
+    }
+
+    @Override
+    public ObservableList<String> getContacts() {
+        return studentDAO.getContactNo();
+    }
+
+    @Override
+    public StudentDTO getStudent(String selectedContact) {
+        return studentDAO.getStudentForReg(selectedContact);
+    }
+
+    @Override
+    public Student searchStudentById(String studentId) {
+        return studentDAO.searchStudentById(studentId);
     }
 }

@@ -99,8 +99,12 @@ public class MainFormController {
     }
 
     @FXML
-    void btnOnActionPayment(ActionEvent event) {
+    void btnOnActionPayment(ActionEvent event) throws IOException {
+        AnchorPane dashboardPane = FXMLLoader.load(getClass().getResource("/lk/ijse/theculinaryacademyhibernateproject/view/PaymentForm.fxml"));
 
+        mainPane.getChildren().clear();
+        mainPane.getChildren().add(dashboardPane);
+        AnimationUtil.popUpAnimation(mainPane,dashboardPane);
     }
 
     @FXML

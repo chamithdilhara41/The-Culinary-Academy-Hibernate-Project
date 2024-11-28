@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="572.0" prefWidth="945.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.theculinaryacademyhibernateproject.controller.PaymentFormController">
+   <children>
+      <Label layoutX="27.0" layoutY="23.0" text="Payment Details ">
+         <font>
+            <Font name="Candara Italic" size="24.0" />
+         </font>
+      </Label>
+      <TableView id="tblSupplier" fx:id="tblStudent" layoutX="25.0" layoutY="69.0" onMouseClicked="#OnMouseClicked" opacity="0.91" prefHeight="215.0" prefWidth="890.0">
+         <columns>
+            <TableColumn fx:id="colStudentId" prefWidth="72.79998397827148" text="PaymentID" />
+            <TableColumn fx:id="colFirstName" prefWidth="189.6000213623047" text="Amount (Rs.)" />
+            <TableColumn fx:id="colLastName" prefWidth="176.79998779296875" text="Amount To be Pay" />
+            <TableColumn fx:id="colAddress" prefWidth="185.60003662109375" text="Last Payment" />
+            <TableColumn fx:id="colEmail" prefWidth="165.60009765625" text="Description" />
+            <TableColumn fx:id="colContact" prefWidth="102.4000244140625" text="Date" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

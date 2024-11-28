@@ -1,8 +1,6 @@
 package lk.ijse.theculinaryacademyhibernateproject.bo;
 
-import lk.ijse.theculinaryacademyhibernateproject.bo.Custom.Impl.ProgramBOImpl;
-import lk.ijse.theculinaryacademyhibernateproject.bo.Custom.Impl.StudentBOImpl;
-import lk.ijse.theculinaryacademyhibernateproject.bo.Custom.Impl.UserBOImpl;
+import lk.ijse.theculinaryacademyhibernateproject.bo.Custom.Impl.*;
 
 public class BOFactory {
     private static BOFactory boFactory;
@@ -13,7 +11,7 @@ public class BOFactory {
     }
 
     public enum BOTypes {
-        USER,STUDENT,PROGRAM
+        USER,STUDENT,PROGRAM,PAYMENT,REGISTRATION
     }
 
     public SuperBO getBO(BOTypes boType) {
@@ -27,6 +25,12 @@ public class BOFactory {
             }
             case PROGRAM -> {
                 return new ProgramBOImpl();
+            }
+            case REGISTRATION -> {
+                return new RegistrationBOImpl();
+            }
+            case PAYMENT -> {
+                return new PaymentBOImpl();
             }
             default -> {
                 return null;

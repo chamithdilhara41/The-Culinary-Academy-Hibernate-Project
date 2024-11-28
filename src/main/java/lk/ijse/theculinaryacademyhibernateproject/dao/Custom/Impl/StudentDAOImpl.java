@@ -1,8 +1,10 @@
 package lk.ijse.theculinaryacademyhibernateproject.dao.Custom.Impl;
 
-import javafx.scene.control.Alert;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import lk.ijse.theculinaryacademyhibernateproject.config.FactoryConfiguration;
 import lk.ijse.theculinaryacademyhibernateproject.dao.Custom.StudentDAO;
+import lk.ijse.theculinaryacademyhibernateproject.dto.StudentDTO;
 import lk.ijse.theculinaryacademyhibernateproject.entity.Student;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -145,6 +147,93 @@ public class StudentDAOImpl implements StudentDAO {
             session.close();
         }
     }
+
+    @Override
+    public ObservableList<String> getContactNo() {
+        Session session = null;
+        ObservableList<String> contactNumbers = FXCollections.observableArrayList();
+
+        try {
+            // Open a Hibernate session
+            session = FactoryConfiguration.getInstance().getSession();
+
+            // HQL query to fetch contact numbers from Student table
+            String hql = "SELECT s.contact FROM Student s";
+            Query<String> query = session.createQuery(hql, String.class);
+
+            // Fetch the result list and add to the ObservableList
+            List<String> result = query.getResultList();
+            contactNumbers.addAll(result);
+
+        } catch (Exception e) {
+            e.printStackTrace(); // Log the exception
+        } finally {
+            if (session != null) {
+                session.close(); // Ensure session is closed
+            }
+        }
+
+        return contactNumbers;
+    }
+
+    @Override
+    public StudentDTO getStudentForReg(String selectedContact) {
+        Session session = null;
+        try {
+            // Open a Hibernate session
+            session = FactoryConfiguration.getInstance().getSession();
+
+            // HQL query to find the student with the specified contact number
+            String hql = "FROM Student WHERE contact = :contact";
+            Query<Student> query = session.createQuery(hql, Student.class);
+            query.setParameter("contact", selectedContact);
+
+            // Get the student entity
+            Student student = query.uniqueResult();
+
+            // If student is found, map to StudentDTO
+            if (student != null) {
+                return new StudentDTO(
+                        student.getStudentId(),
+                        student.getFirstName(),
+                        student.getLastName(),
+                        student.getAddress(),
+                        student.getEmail(),
+                        student.getContact(),
+                        student.getDOB()
+                );
+            }
+
+            return null; // Return null if no student is found
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null; // Return null in case of failure
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+    }
+
+
+    @Override
+    public Student searchStudentById(String studentId) {
+        try (Session session = FactoryConfiguration.getInstance().getSession()) {
+            // Open a Hibernate session
+
+            // HQL query to find the student with the specified studentId
+            String hql = "FROM Student WHERE studentId = :studentId";
+            Query<Student> query = session.createQuery(hql, Student.class);
+            query.setParameter("studentId", studentId);
+
+            // Return the student if found
+            return query.uniqueResult();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null; // Return null in case of failure
+        }
+    }
+
 
 
     @Override
