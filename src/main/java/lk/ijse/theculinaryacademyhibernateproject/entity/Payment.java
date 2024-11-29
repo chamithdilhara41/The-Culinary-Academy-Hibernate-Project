@@ -20,6 +20,7 @@ public class Payment {
     private double pay_amount;
     private double upfront_amount;
     private String description;
+    private String payment_type;
 
 
     @ManyToOne

@@ -2,11 +2,14 @@ package lk.ijse.theculinaryacademyhibernateproject.dao.Custom.Impl;
 
 import lk.ijse.theculinaryacademyhibernateproject.config.FactoryConfiguration;
 import lk.ijse.theculinaryacademyhibernateproject.dao.Custom.UserDAO;
+import lk.ijse.theculinaryacademyhibernateproject.dto.UserDTO;
+import lk.ijse.theculinaryacademyhibernateproject.entity.Student;
 import lk.ijse.theculinaryacademyhibernateproject.entity.User;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class UserDAOImpl implements UserDAO {
@@ -73,6 +76,7 @@ public class UserDAOImpl implements UserDAO {
         return isUpdated;
     }
 
+
     @Override
     public int checkUsers() {
         Session session = FactoryConfiguration.getInstance().getSession();
@@ -110,7 +114,15 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public List<User> getAll() {
-        return List.of();//user table ek hadanna one
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        List<User> students = session.createQuery("FROM User", User.class).list();
+
+        transaction.commit();
+        session.close();
+
+        return students;
     }
 
     @Override
@@ -128,6 +140,7 @@ public class UserDAOImpl implements UserDAO {
         return user;
     }
 }
+
 /*
 @Override
 public boolean save(Customer dto) {

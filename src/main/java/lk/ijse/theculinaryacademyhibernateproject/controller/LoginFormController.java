@@ -30,6 +30,9 @@ public class LoginFormController {
     @FXML
     private TextField txtUsernameLogin;
 
+    static String userRole;
+    static String userName;
+
     UserBO userBO = (UserBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.USER);
 
     public void initialize() {
@@ -56,6 +59,9 @@ public class LoginFormController {
         if (user != null) {
             // Compare the provided password with the encrypted password in the database
             if (BCrypt.checkpw(password, user.getPassword()) || user.getPassword().equals(password)) {
+
+                userRole = user.getRole();
+                userName = user.getUsername();
 
                 new Alert(Alert.AlertType.INFORMATION, "Login successful!", ButtonType.OK).show();
 

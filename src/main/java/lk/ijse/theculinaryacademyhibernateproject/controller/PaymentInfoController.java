@@ -74,31 +74,29 @@ public class PaymentInfoController {
         String description = txtAreaDescription.getText();
         double payAmount = Double.parseDouble(txtPayAmount.getText());
         String pay_date = lblDate.getText();
+        String paymentType = comBoxPaymentType.getValue();
         double upfront_amount = 0;
 
-        if (payAmount <= programFee) {
-            upfront_amount = programFee - payAmount;
-        }else {
-            new Alert(Alert.AlertType.ERROR,"Check Pay Amount & Program Fee").show();
-        }
 
         Registration registration = registrationBO.searchByRegisterId(registerId);
         Student student = studentBO.searchStudentById(studentId);
 
-
-        PaymentDTO paymentdto = new PaymentDTO(paymentId, pay_date, programFee, payAmount, upfront_amount, description, student, registration);
-
         try {
-            // Assuming `paymentDTO` is already populated with data
-            paymentBO.savePayment(paymentdto);
+            if (payAmount <= programFee & programFee >= payAmount) {
 
-            // Show success alert
-            new Alert(Alert.AlertType.INFORMATION, "Payment saved successfully!").show();
+                upfront_amount = programFee - payAmount;
+                PaymentDTO paymentdto = new PaymentDTO(paymentId, pay_date, programFee, payAmount, upfront_amount, description, paymentType, student, registration);
+                paymentBO.savePayment(paymentdto);
 
-            // Automatically close the payment info window
-            Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            currentStage.close();
+                // Show success alert
+                new Alert(Alert.AlertType.INFORMATION, "Payment saved successfully!").show();
 
+                // Automatically close the payment info window
+                Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                currentStage.close();
+            }else {
+                new Alert(Alert.AlertType.ERROR,"Check Pay Amount & Program Fee").show();
+            }
 
         } catch (Exception e) {
             // Show error alert

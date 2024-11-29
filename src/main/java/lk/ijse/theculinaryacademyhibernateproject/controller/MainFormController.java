@@ -59,6 +59,9 @@ public class MainFormController {
     @FXML
     private AnchorPane rootNode;
 
+    static String userRole;
+    static String userName;
+
     public void initialize() throws IOException {
         AnimationUtil.addPulseAnimation(btnProgram);
         AnimationUtil.addPulseAnimation(btnDashboard);
@@ -71,6 +74,19 @@ public class MainFormController {
         setDate();
         setTime();
         btnOnActionDashboard(new ActionEvent());
+
+        userRole = LoginFormController.userRole;
+        userName = LoginFormController.userName;
+
+        disableButtons();
+
+    }
+
+    private void disableButtons() {
+        if (userRole.equals("coordinator")){
+            btnUser.setDisable(true);
+            btnSettings.setDisable(true);
+        }
     }
 
     @FXML
@@ -117,8 +133,12 @@ public class MainFormController {
     }
 
     @FXML
-    void btnOnActionSettings(ActionEvent event) {
+    void btnOnActionSettings(ActionEvent event) throws IOException {
+        AnchorPane dashboardPane = FXMLLoader.load(getClass().getResource("/lk/ijse/theculinaryacademyhibernateproject/view/SettingForm.fxml"));
 
+        mainPane.getChildren().clear();
+        mainPane.getChildren().add(dashboardPane);
+        AnimationUtil.popUpAnimation(mainPane,dashboardPane);
     }
 
     @FXML
@@ -131,9 +151,14 @@ public class MainFormController {
     }
 
     @FXML
-    void btnOnActionUser(ActionEvent event) {
+    void btnOnActionUser(ActionEvent event) throws IOException {
+        AnchorPane dashboardPane = FXMLLoader.load(getClass().getResource("/lk/ijse/theculinaryacademyhibernateproject/view/UserForm.fxml"));
 
+        mainPane.getChildren().clear();
+        mainPane.getChildren().add(dashboardPane);
+        AnimationUtil.popUpAnimation(mainPane,dashboardPane);
     }
+
     private void setDate() {
         LocalDate now = LocalDate.now();
         lblDate.setText(String.valueOf(now));

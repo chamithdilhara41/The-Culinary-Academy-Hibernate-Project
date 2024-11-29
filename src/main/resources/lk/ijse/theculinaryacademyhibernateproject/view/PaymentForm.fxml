@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-
 
 <AnchorPane prefHeight="572.0" prefWidth="945.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.theculinaryacademyhibernateproject.controller.PaymentFormController">
    <children>
@@ -14,15 +16,70 @@
             <Font name="Candara Italic" size="24.0" />
          </font>
       </Label>
-      <TableView id="tblSupplier" fx:id="tblStudent" layoutX="25.0" layoutY="69.0" onMouseClicked="#OnMouseClicked" opacity="0.91" prefHeight="215.0" prefWidth="890.0">
+      <TableView id="tblSupplier" fx:id="tblPayment" layoutX="25.0" layoutY="69.0" onMouseClicked="#OnMouseClicked" opacity="0.91" prefHeight="215.0" prefWidth="890.0">
          <columns>
-            <TableColumn fx:id="colStudentId" prefWidth="72.79998397827148" text="PaymentID" />
-            <TableColumn fx:id="colFirstName" prefWidth="189.6000213623047" text="Amount (Rs.)" />
-            <TableColumn fx:id="colLastName" prefWidth="176.79998779296875" text="Amount To be Pay" />
-            <TableColumn fx:id="colAddress" prefWidth="185.60003662109375" text="Last Payment" />
-            <TableColumn fx:id="colEmail" prefWidth="165.60009765625" text="Description" />
-            <TableColumn fx:id="colContact" prefWidth="102.4000244140625" text="Date" />
+            <TableColumn fx:id="colPaymentId" prefWidth="72.79998397827148" text="PaymentID" />
+            <TableColumn fx:id="colAmount" prefWidth="125.60000610351562" text="Amount (Rs.)" />
+            <TableColumn fx:id="colUpFrontAmount" prefWidth="140.8000030517578" text="Up front Amount" />
+            <TableColumn fx:id="colLastPayment" prefWidth="136.0" text="Last Payment" />
+            <TableColumn fx:id="colDescription" prefWidth="160.79998779296875" text="Description" />
+            <TableColumn fx:id="colMethod" prefWidth="86.40008544921875" text="Method" />
+            <TableColumn fx:id="colStudentId" prefWidth="83.2000732421875" text="StudentID" />
+            <TableColumn fx:id="colDate" prefWidth="88.0" text="Date" />
          </columns>
       </TableView>
+      <Label layoutX="27.0" layoutY="326.0" prefHeight="20.0" prefWidth="85.0" text="Payment ID :-">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtPaymentId" layoutX="115.0" layoutY="321.0" onAction="#txtOnActionSearchPaymentID" onKeyReleased="#txtStudentIdOnKeyReleased" prefHeight="30.0" prefWidth="144.0" style="-fx-background-radius: 15 15 15 15;">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="292.0" layoutY="329.0" prefHeight="20.0" prefWidth="86.0" text="Register ID :-">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtRegisterId" layoutX="377.0" layoutY="325.0" onAction="#txtOnActionSearchRegisterID" onKeyReleased="#txtLastNameOnKeyReleased" prefHeight="30.0" prefWidth="150.0" style="-fx-background-radius: 15 15 15 15;">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label fx:id="lblBuyerForm" layoutX="28.0" layoutY="501.0" text="Payment Form">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="374.0" layoutY="388.0" prefHeight="20.0" prefWidth="101.0" text="Pay Amount :-">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtPayAmount" layoutX="474.0" layoutY="384.0" onKeyReleased="#txtLastNameOnKeyReleased" prefHeight="30.0" prefWidth="150.0" style="-fx-background-radius: 15 15 15 15;">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="28.0" layoutY="384.0" prefHeight="26.0" prefWidth="131.0" text="Upfront Amount :-">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblUpfrontAmount" layoutX="165.0" layoutY="385.0" prefHeight="26.0" prefWidth="178.0" text=" -" textFill="#ff000d">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Label>
+      <JFXButton buttonType="RAISED" layoutX="723.0" layoutY="508.0" onAction="#btnOnActionUpdatePayment" prefHeight="37.0" prefWidth="150.0" ripplerFill="#00a110" style="-fx-background-color: #009e05;" text="Update Payment" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
    </children>
 </AnchorPane>

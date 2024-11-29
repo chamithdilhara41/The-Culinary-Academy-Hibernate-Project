@@ -1,7 +1,5 @@
-package lk.ijse.theculinaryacademyhibernateproject.dto;
+package lk.ijse.theculinaryacademyhibernateproject.tdm;
 
-import lk.ijse.theculinaryacademyhibernateproject.entity.Registration;
-import lk.ijse.theculinaryacademyhibernateproject.entity.Student;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class PaymentDTO {
+public class PaymentTm {
     private String pay_id;
     private String pay_date;
     private double balance_amount;
@@ -19,7 +17,6 @@ public class PaymentDTO {
     private String description;
     private String payment_type;
 
-    private Student studentId;
-    private Registration registrationId;
-
+    private String student_id;
+    private String registration_id;
 }

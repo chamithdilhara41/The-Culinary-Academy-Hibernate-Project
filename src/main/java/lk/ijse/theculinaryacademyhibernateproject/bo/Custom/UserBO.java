@@ -4,6 +4,8 @@ import lk.ijse.theculinaryacademyhibernateproject.bo.SuperBO;
 import lk.ijse.theculinaryacademyhibernateproject.dto.UserDTO;
 import lk.ijse.theculinaryacademyhibernateproject.entity.User;
 
+import java.util.List;
+
 public interface UserBO extends SuperBO {
 
     boolean saveUser(UserDTO userDTO);
@@ -17,4 +19,7 @@ public interface UserBO extends SuperBO {
     String getEmailByUsername(String username);
 
     boolean changePassword(String username, String encryptedPassword);
+
+
+    List<UserDTO> getAllUsers();
 }
