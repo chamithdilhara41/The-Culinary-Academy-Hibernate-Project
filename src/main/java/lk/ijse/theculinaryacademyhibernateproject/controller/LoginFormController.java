@@ -10,6 +10,10 @@ import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import lk.ijse.theculinaryacademyhibernateproject.bo.BOFactory;
 import lk.ijse.theculinaryacademyhibernateproject.bo.Custom.UserBO;
+import lk.ijse.theculinaryacademyhibernateproject.controller.Alert.ErrorHandler;
+import lk.ijse.theculinaryacademyhibernateproject.controller.exception.InvalidPasswordException;
+import lk.ijse.theculinaryacademyhibernateproject.controller.exception.UserNotFoundException;
+import lk.ijse.theculinaryacademyhibernateproject.controller.exception.ValidationException;
 import lk.ijse.theculinaryacademyhibernateproject.dto.UserDTO;
 import lk.ijse.theculinaryacademyhibernateproject.entity.User;
 import org.mindrot.jbcrypt.BCrypt;
@@ -51,12 +55,19 @@ public class LoginFormController {
     @FXML
     void btnLoginOnAction(ActionEvent event) throws IOException {
 
-        String username = txtUsernameLogin.getText();
-        String password = txtPasswordLogin.getText();
+        try {
+            String username = txtUsernameLogin.getText();
+            String password = txtPasswordLogin.getText();
 
-        User user = userBO.searchUser(username);
+            if (username.isEmpty() || password.isEmpty()) {
+                throw new ValidationException("Username, password, and role are required.");
+            }
+            User user = userBO.searchUser(username);
 
-        if (user != null) {
+            if (user == null) {
+                throw new UserNotFoundException("User not found.");
+            }
+
             // Compare the provided password with the encrypted password in the database
             if (BCrypt.checkpw(password, user.getPassword()) || user.getPassword().equals(password)) {
 
@@ -69,13 +80,17 @@ public class LoginFormController {
 
                 loadDashboard();
             } else {
-                new Alert(Alert.AlertType.ERROR, "Invalid username or password.", ButtonType.OK).show();
+                throw new InvalidPasswordException("Invalid password.");
             }
-        } else {
-            new Alert(Alert.AlertType.ERROR, "User not found.", ButtonType.OK).show();
+
+        } catch (ValidationException | UserNotFoundException | InvalidPasswordException e) {
+            ErrorHandler.showError("Login Error", e.getMessage());
+        } catch (Exception e) {
+            ErrorHandler.showError("System Error", "An unexpected error occurred: " + e.getMessage());
         }
-
-
+/*
+        catch (Exception e) {
+            throw new RuntimeException(e);*/
         /*String username = txtUsernameLogin.getText();
         String password = txtPasswordLogin.getText();
         System.out.println("tn click");

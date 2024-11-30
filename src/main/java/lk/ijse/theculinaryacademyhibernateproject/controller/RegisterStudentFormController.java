@@ -218,6 +218,7 @@ public class RegisterStudentFormController {
             registrationBO.RegisterStudentDetails(registrationDTO);
 
             generateId();
+            getAllRegisteredStudents();
             setCellValueFactory();
             paymentInfo();
             new Alert(Alert.AlertType.INFORMATION, "Student Details Registered").show();

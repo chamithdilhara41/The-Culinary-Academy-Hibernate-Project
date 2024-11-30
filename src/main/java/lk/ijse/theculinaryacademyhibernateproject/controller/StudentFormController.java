@@ -16,8 +16,10 @@ import lk.ijse.theculinaryacademyhibernateproject.bo.Custom.StudentBO;
 import lk.ijse.theculinaryacademyhibernateproject.dto.StudentDTO;
 import lk.ijse.theculinaryacademyhibernateproject.tdm.StudentTm;
 import lk.ijse.theculinaryacademyhibernateproject.util.AnimationUtil;
+import lk.ijse.theculinaryacademyhibernateproject.util.Regex;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -126,20 +128,17 @@ public class StudentFormController {
 
         StudentDTO studentDTO = new StudentDTO(studentId,firstName,lastName,address,email,contact,DOB);
 
-        try {
+        if (isValid()) {
             studentBO.saveStudent(studentDTO);
-            System.out.println(studentDTO);
             new Alert(Alert.AlertType.INFORMATION, "Student Saved").show();
             clearFields();
             getAllStudents();
             setCellValueFactory();
             generateId();
-        } catch (Exception e) {
-            e.printStackTrace();
-            new Alert(Alert.AlertType.ERROR, "Student Save Error").show();
-            getAllStudents();
-            setCellValueFactory();
+        }else {
+            new Alert(Alert.AlertType.ERROR, "Please check Text Fields... ").show();
         }
+
     }
 
     private void setCellValueFactory() {
@@ -183,13 +182,18 @@ public class StudentFormController {
         StudentDTO studentDTO = new StudentDTO(studentId,firstName,lastName,address,email,contact,DOB);
 
         try {
-            studentBO.updateStudent(studentDTO);
-            System.out.println(studentDTO);
-            new Alert(Alert.AlertType.INFORMATION, "Student Updated").show();
-            clearFields();
-            getAllStudents();
-            setCellValueFactory();
-            generateId();
+            if (isValid()){
+                studentBO.updateStudent(studentDTO);
+                System.out.println(studentDTO);
+                new Alert(Alert.AlertType.INFORMATION, "Student Updated").show();
+                clearFields();
+                getAllStudents();
+                setCellValueFactory();
+                generateId();
+            }else {
+                new Alert(Alert.AlertType.ERROR, "Please check Text Fields... ").show();
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
             new Alert(Alert.AlertType.ERROR, "Student Update Error").show();
@@ -200,27 +204,27 @@ public class StudentFormController {
 
     @FXML
     void txtAddressOnKeyReleased(KeyEvent event) {
-
+        Regex.setTextColor(lk.ijse.theculinaryacademyhibernateproject.util.TextField.ADDRESS, txtAddress);
     }
 
     @FXML
     void txtContactOnKeyReleased(KeyEvent event) {
-
+        Regex.setTextColor(lk.ijse.theculinaryacademyhibernateproject.util.TextField.CONTACT, txtContact);
     }
 
     @FXML
     void txtEmailOnKeyReleased(KeyEvent event) {
-
+        Regex.setTextColor(lk.ijse.theculinaryacademyhibernateproject.util.TextField.EMAIL, txtEmail);
     }
 
     @FXML
     void txtFirstNameOnKeyReleased(KeyEvent event) {
-
+        Regex.setTextColor(lk.ijse.theculinaryacademyhibernateproject.util.TextField.NAME, txtFirstName);
     }
 
     @FXML
     void txtLastNameOnKeyReleased(KeyEvent event) {
-
+        Regex.setTextColor(lk.ijse.theculinaryacademyhibernateproject.util.TextField.NAME, txtLastName);
     }
 
     @FXML
@@ -230,7 +234,23 @@ public class StudentFormController {
 
     @FXML
     void txtStudentIdOnKeyReleased(KeyEvent event) {
+        Regex.setTextColor(lk.ijse.theculinaryacademyhibernateproject.util.TextField.ID, txtStudentId);
+    }
 
+    @FXML
+    public void txtDateOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.theculinaryacademyhibernateproject.util.TextField.DATE, txtDOB);
+    }
+
+    public boolean isValid(){
+        if (!Regex.setTextColor(lk.ijse.theculinaryacademyhibernateproject.util.TextField.ID,txtStudentId)) return false;
+        if (!Regex.setTextColor(lk.ijse.theculinaryacademyhibernateproject.util.TextField.NAME,txtFirstName)) return false;
+        if (!Regex.setTextColor(lk.ijse.theculinaryacademyhibernateproject.util.TextField.NAME,txtLastName)) return false;
+        if (!Regex.setTextColor(lk.ijse.theculinaryacademyhibernateproject.util.TextField.ADDRESS,txtAddress)) return false;
+        if (!Regex.setTextColor(lk.ijse.theculinaryacademyhibernateproject.util.TextField.EMAIL,txtEmail)) return false;
+        if (!Regex.setTextColor(lk.ijse.theculinaryacademyhibernateproject.util.TextField.CONTACT,txtContact)) return false;
+        if (!Regex.setTextColor(lk.ijse.theculinaryacademyhibernateproject.util.TextField.DATE,txtDOB)) return false;
+        return true;
     }
 
     @FXML
@@ -277,4 +297,5 @@ public class StudentFormController {
         txtLastName.setText("");
         txtFirstName.setText("");
     }
+
 }

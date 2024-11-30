@@ -77,7 +77,7 @@ public class MainFormController {
 
         userRole = LoginFormController.userRole;
         userName = LoginFormController.userName;
-
+        lblName.setText(userName);
         disableButtons();
 
     }

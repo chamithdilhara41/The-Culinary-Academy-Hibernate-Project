@@ -96,7 +96,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="txtDOB" layoutX="386.0" layoutY="433.0" onKeyReleased="#txtAddressOnKeyReleased" prefHeight="30.0" prefWidth="94.0" promptText="XXXX-XX-XX" style="-fx-background-radius: 15 15 15 15;">
+      <TextField fx:id="txtDOB" layoutX="386.0" layoutY="433.0" onKeyReleased="#txtDateOnKeyReleased" prefHeight="30.0" prefWidth="94.0" promptText="XXXX-XX-XX" style="-fx-background-radius: 15 15 15 15;">
          <font>
             <Font size="14.0" />
          </font>
