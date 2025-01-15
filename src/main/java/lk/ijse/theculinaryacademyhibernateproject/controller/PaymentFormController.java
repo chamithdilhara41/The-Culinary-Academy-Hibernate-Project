@@ -10,9 +10,8 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import lk.ijse.theculinaryacademyhibernateproject.bo.BOFactory;
 import lk.ijse.theculinaryacademyhibernateproject.bo.Custom.PaymentBO;
-import lk.ijse.theculinaryacademyhibernateproject.dto.PaymentDTO;
 import lk.ijse.theculinaryacademyhibernateproject.entity.Payment;
-import lk.ijse.theculinaryacademyhibernateproject.tdm.PaymentTm;
+import lk.ijse.theculinaryacademyhibernateproject.tm.PaymentTm;
 
 import java.util.List;
 

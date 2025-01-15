@@ -15,7 +15,7 @@ module lk.ijse.theculinaryacademyhibernateproject {
     opens lk.ijse.theculinaryacademyhibernateproject.controller to javafx.fxml;
     opens lk.ijse.theculinaryacademyhibernateproject.dao.Custom to org.hibernate.orm.core;
     opens lk.ijse.theculinaryacademyhibernateproject.entity to org.hibernate.orm.core;// Open package for ORM core
-    opens lk.ijse.theculinaryacademyhibernateproject.tdm to javafx.base;
+    opens lk.ijse.theculinaryacademyhibernateproject.tm to javafx.base;
 
     exports lk.ijse.theculinaryacademyhibernateproject;
     exports lk.ijse.theculinaryacademyhibernateproject.dao.Custom;

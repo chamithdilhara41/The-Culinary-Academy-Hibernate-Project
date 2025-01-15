@@ -13,8 +13,7 @@ import javafx.scene.layout.AnchorPane;
 import lk.ijse.theculinaryacademyhibernateproject.bo.BOFactory;
 import lk.ijse.theculinaryacademyhibernateproject.bo.Custom.UserBO;
 import lk.ijse.theculinaryacademyhibernateproject.dto.UserDTO;
-import lk.ijse.theculinaryacademyhibernateproject.entity.User;
-import lk.ijse.theculinaryacademyhibernateproject.tdm.UserTm;
+import lk.ijse.theculinaryacademyhibernateproject.tm.UserTm;
 import org.mindrot.jbcrypt.BCrypt;
 
 import java.util.List;

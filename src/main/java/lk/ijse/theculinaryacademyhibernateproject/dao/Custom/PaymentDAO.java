@@ -1,9 +1,8 @@
 package lk.ijse.theculinaryacademyhibernateproject.dao.Custom;
 
 import lk.ijse.theculinaryacademyhibernateproject.dao.CrudDAO;
-import lk.ijse.theculinaryacademyhibernateproject.dto.PaymentDTO;
 import lk.ijse.theculinaryacademyhibernateproject.entity.Payment;
-import lk.ijse.theculinaryacademyhibernateproject.tdm.PaymentTm;
+import lk.ijse.theculinaryacademyhibernateproject.tm.PaymentTm;
 
 import java.util.List;
 

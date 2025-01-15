@@ -1,4 +1,4 @@
-package lk.ijse.theculinaryacademyhibernateproject.tdm;
+package lk.ijse.theculinaryacademyhibernateproject.tm;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

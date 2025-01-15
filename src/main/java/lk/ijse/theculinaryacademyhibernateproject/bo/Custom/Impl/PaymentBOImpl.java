@@ -4,10 +4,8 @@ import lk.ijse.theculinaryacademyhibernateproject.bo.Custom.PaymentBO;
 import lk.ijse.theculinaryacademyhibernateproject.dao.Custom.PaymentDAO;
 import lk.ijse.theculinaryacademyhibernateproject.dao.DAOFactory;
 import lk.ijse.theculinaryacademyhibernateproject.dto.PaymentDTO;
-import lk.ijse.theculinaryacademyhibernateproject.dto.StudentDTO;
 import lk.ijse.theculinaryacademyhibernateproject.entity.Payment;
-import lk.ijse.theculinaryacademyhibernateproject.entity.Student;
-import lk.ijse.theculinaryacademyhibernateproject.tdm.PaymentTm;
+import lk.ijse.theculinaryacademyhibernateproject.tm.PaymentTm;
 
 import java.util.ArrayList;
 import java.util.List;

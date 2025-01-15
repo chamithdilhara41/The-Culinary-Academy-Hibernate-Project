@@ -3,7 +3,7 @@ package lk.ijse.theculinaryacademyhibernateproject.dao.Custom.Impl;
 import lk.ijse.theculinaryacademyhibernateproject.config.FactoryConfiguration;
 import lk.ijse.theculinaryacademyhibernateproject.dao.Custom.RegistrationDAO;
 import lk.ijse.theculinaryacademyhibernateproject.entity.Registration;
-import lk.ijse.theculinaryacademyhibernateproject.tdm.StudentRegistrationTM;
+import lk.ijse.theculinaryacademyhibernateproject.tm.StudentRegistrationTM;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;

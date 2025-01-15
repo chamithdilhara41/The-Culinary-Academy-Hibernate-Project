@@ -1,7 +1,6 @@
 package lk.ijse.theculinaryacademyhibernateproject.config;
 
 import lk.ijse.theculinaryacademyhibernateproject.entity.*;
-import lk.ijse.theculinaryacademyhibernateproject.tdm.StudentTm;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;

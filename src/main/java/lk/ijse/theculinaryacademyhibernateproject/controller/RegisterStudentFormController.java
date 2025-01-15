@@ -23,7 +23,7 @@ import lk.ijse.theculinaryacademyhibernateproject.dto.RegistrationDTO;
 import lk.ijse.theculinaryacademyhibernateproject.dto.StudentDTO;
 import lk.ijse.theculinaryacademyhibernateproject.entity.Program;
 import lk.ijse.theculinaryacademyhibernateproject.entity.Student;
-import lk.ijse.theculinaryacademyhibernateproject.tdm.StudentRegistrationTM;
+import lk.ijse.theculinaryacademyhibernateproject.tm.StudentRegistrationTM;
 
 import java.io.IOException;
 import java.time.LocalDate;

@@ -12,7 +12,7 @@ import javafx.scene.input.MouseEvent;
 import lk.ijse.theculinaryacademyhibernateproject.bo.BOFactory;
 import lk.ijse.theculinaryacademyhibernateproject.bo.Custom.ProgramBO;
 import lk.ijse.theculinaryacademyhibernateproject.dto.ProgramDTO;
-import lk.ijse.theculinaryacademyhibernateproject.tdm.ProgramTm;
+import lk.ijse.theculinaryacademyhibernateproject.tm.ProgramTm;
 
 import java.util.List;
 

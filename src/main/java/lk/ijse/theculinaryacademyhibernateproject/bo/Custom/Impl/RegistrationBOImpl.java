@@ -4,12 +4,9 @@ import lk.ijse.theculinaryacademyhibernateproject.bo.Custom.RegistrationBO;
 import lk.ijse.theculinaryacademyhibernateproject.dao.Custom.RegistrationDAO;
 import lk.ijse.theculinaryacademyhibernateproject.dao.DAOFactory;
 import lk.ijse.theculinaryacademyhibernateproject.dto.RegistrationDTO;
-import lk.ijse.theculinaryacademyhibernateproject.dto.StudentDTO;
 import lk.ijse.theculinaryacademyhibernateproject.entity.Registration;
-import lk.ijse.theculinaryacademyhibernateproject.entity.Student;
-import lk.ijse.theculinaryacademyhibernateproject.tdm.StudentRegistrationTM;
+import lk.ijse.theculinaryacademyhibernateproject.tm.StudentRegistrationTM;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class RegistrationBOImpl implements RegistrationBO {

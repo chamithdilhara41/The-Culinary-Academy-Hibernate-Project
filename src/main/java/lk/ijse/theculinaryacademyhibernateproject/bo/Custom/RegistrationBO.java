@@ -3,7 +3,7 @@ package lk.ijse.theculinaryacademyhibernateproject.bo.Custom;
 import lk.ijse.theculinaryacademyhibernateproject.bo.SuperBO;
 import lk.ijse.theculinaryacademyhibernateproject.dto.RegistrationDTO;
 import lk.ijse.theculinaryacademyhibernateproject.entity.Registration;
-import lk.ijse.theculinaryacademyhibernateproject.tdm.StudentRegistrationTM;
+import lk.ijse.theculinaryacademyhibernateproject.tm.StudentRegistrationTM;
 
 import java.util.List;
 

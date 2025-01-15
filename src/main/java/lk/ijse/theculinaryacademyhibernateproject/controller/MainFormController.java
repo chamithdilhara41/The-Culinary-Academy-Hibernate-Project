@@ -86,6 +86,7 @@ public class MainFormController {
         if (userRole.equals("coordinator")){
             btnUser.setDisable(true);
             btnSettings.setDisable(true);
+            btnProgram.setDisable(true);
         }
     }
 

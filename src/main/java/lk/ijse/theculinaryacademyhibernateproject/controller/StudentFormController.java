@@ -14,12 +14,11 @@ import javafx.scene.layout.AnchorPane;
 import lk.ijse.theculinaryacademyhibernateproject.bo.BOFactory;
 import lk.ijse.theculinaryacademyhibernateproject.bo.Custom.StudentBO;
 import lk.ijse.theculinaryacademyhibernateproject.dto.StudentDTO;
-import lk.ijse.theculinaryacademyhibernateproject.tdm.StudentTm;
+import lk.ijse.theculinaryacademyhibernateproject.tm.StudentTm;
 import lk.ijse.theculinaryacademyhibernateproject.util.AnimationUtil;
 import lk.ijse.theculinaryacademyhibernateproject.util.Regex;
 
 import java.io.IOException;
-import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.List;
 

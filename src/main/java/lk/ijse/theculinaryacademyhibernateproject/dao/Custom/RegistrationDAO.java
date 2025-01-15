@@ -2,7 +2,7 @@ package lk.ijse.theculinaryacademyhibernateproject.dao.Custom;
 
 import lk.ijse.theculinaryacademyhibernateproject.dao.CrudDAO;
 import lk.ijse.theculinaryacademyhibernateproject.entity.Registration;
-import lk.ijse.theculinaryacademyhibernateproject.tdm.StudentRegistrationTM;
+import lk.ijse.theculinaryacademyhibernateproject.tm.StudentRegistrationTM;
 
 import java.util.List;
 
